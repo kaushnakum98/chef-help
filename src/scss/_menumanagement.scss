@@ -1,0 +1,99 @@
+.menus {
+  background-color: $paragraph;
+}
+
+.menu {
+  &__content {
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+    margin: 10rem 0;
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    border-radius: 0.3125rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 150ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    :first-child() {
+      align-items: center;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    height: 12.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__text {
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+    color: $paragraph;
+
+    @include breakpoint-up(medium) {
+      padding: 1.875rem 1.5625rem;
+    }
+  }
+
+  &__price {
+    font-size: 0.625rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__name {
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    color: $paragraph;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+  }
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  // &__form {
+  // }
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    :nth-child() {
+      margin-bottom: 3rem;
+    }
+    label {
+      font-weight: bold;
+    }
+  }
+
+  &__select {
+    border: 1px solid rgb(43, 12, 214);
+
+    width: 15rem;
+  }
+}

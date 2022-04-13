@@ -1,0 +1,60 @@
+.hero {
+  @include breakpoint-up(large) {
+    display: flex;
+    height: 30rem;
+    align-items: center;
+  }
+  &__image {
+    position: relative;
+    background-image: url(../Media/hero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 17.5rem;
+    @include breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      height: 30rem;
+    }
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-image: url(../Media/hero.svg);
+    //   background-repeat: no-repeat;
+    //   background-size: 93%;
+    //   background-position: center center;
+    // }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      flex: 2;
+      order: 1;
+      text-align: left;
+    }
+    h1 {
+      font-weight: 300;
+      color: $headline;
+      line-height: 1.15;
+      font-size: 2.31rem;
+      margin-bottom: 1.5rem;
+      @include breakpoint-up(large) {
+        font-size: $font-xlg;
+      }
+    }
+    p {
+      line-height: 1.5;
+      font-size: 0.8rem;
+      margin-bottom: 2.25rem;
+      color: $paragraph;
+      @include breakpoint-up(large) {
+        font-size: $font-lg;
+      }
+    }
+  }
+}
